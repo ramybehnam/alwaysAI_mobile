@@ -1,0 +1,8 @@
+{
+  "targetProtocol": "ssh+docker:",
+  "targetHostname": "pi@192.168.68.114",
+  "targetPath": "alwaysai/tttttt",
+  "dockerImageId": "sha256:35baef133cdc2b7f7a2332881e4153fc54aea9297e998bb22f748cd428fa9952",
+  "targetHardware": "armv7hf",
+  "deviceId": "e32f8f84-1bf8-448a-a773-0e340d14dc13"
+}
