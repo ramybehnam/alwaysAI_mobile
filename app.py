@@ -29,7 +29,8 @@ def main():
     seconds = int (0)
     minutes = int (0)
     hours = int (0)
-    timmer = int
+    timer = int
+    
     df = pd.DataFrame(
         [['alwaysAI_MAU',0,0,0]],
         index = [0],
@@ -56,8 +57,8 @@ def main():
                 text.append(
                         "Inference time: {:1.3f} s".format(results.duration)) 
 
-                text.append("Timmer: ")
-                text.append(timmer)
+                text.append("Timer: ")
+                text.append(timer)
                 
                 text.append("Objects:")
 
@@ -74,7 +75,7 @@ def main():
                             minutes = 0
                             hours = hours + 1
                         time.sleep(1)    
-                        timmer = hours , minutes , seconds
+                        timer = hours , minutes , seconds
 
                         df.at[0, 'Hours'] = hours
                         df.at[0, 'Minutes'] = minutes
