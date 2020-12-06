@@ -16,7 +16,6 @@ To install app dependencies in the runtime container, list them in the
 requirements.txt file.
 """
 
-
 def main():
     obj_detect = edgeiq.ObjectDetection("alwaysai/ssd_mobilenet_v2_coco_2018_03_29")
     obj_detect.load(engine=edgeiq.Engine.DNN_OPENVINO)
@@ -26,10 +25,11 @@ def main():
     print("Accelerator: {}\n".format(obj_detect.accelerator))
     print("Labels:\n{}\n".format(obj_detect.labels))
 
-    seconds = int (0)
-    minutes = int (0)
-    hours = int (0)
-    timmer = int
+    seconds = 0
+    minutes = 0
+    hours = 0
+    timer = 0
+
     df = pd.DataFrame(
         [['alwaysAI_MAU',0,0,0]],
         index = [0],
@@ -56,8 +56,8 @@ def main():
                 text.append(
                         "Inference time: {:1.3f} s".format(results.duration)) 
 
-                text.append("Timmer: ")
-                text.append(timmer)
+                text.append("Timer: ")
+                text.append(timer)
                 
                 text.append("Objects:")
 
@@ -73,8 +73,8 @@ def main():
                         if minutes > 59:
                             minutes = 0
                             hours = hours + 1
-                        time.sleep(1)    
-                        timmer = hours , minutes , seconds
+                        time.sleep(1.0)   
+                        timer = hours , minutes , seconds
 
                         df.at[0, 'Hours'] = hours
                         df.at[0, 'Minutes'] = minutes
@@ -96,3 +96,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+   
